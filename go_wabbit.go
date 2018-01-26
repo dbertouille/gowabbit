@@ -106,6 +106,6 @@ func (p *Prediction) Class() string {
 	return p.class
 }
 
-func (p *Prediction) Val() string {
+func (p *Prediction) Val() float64 {
 	return p.val
 }
