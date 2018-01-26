@@ -85,12 +85,10 @@ func (w *Wabbit) Predict(command string) (*Prediction, error) {
 	}
 
 	splitString := strings.Split(string(val), " ")
-	flt, _ := strconv.ParseFloat(string(splitString[0]), 64)
+	flt, _ := strconv.ParseFloat(strings.TrimSpace(string(splitString[0])), 64)
 
-	var class string
-	if len(splitString) == 1 {
-		class = ""
-	} else {
+	class := ""
+	if len(splitString) > 1 {
 		class = strings.TrimSpace(splitString[1])
 	}
 
